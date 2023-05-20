@@ -3,6 +3,7 @@ package com.example.wayuumath;
 import android.content.Intent;
 import android.media.MediaPlayer;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -48,6 +49,58 @@ public class Main2Activity_Nivel1 extends AppCompatActivity {
         mp_bad=MediaPlayer.create(this, R.raw.bad);
         NumeroAleatorio();
     }
+
+    public void Comparar(View view){
+        String respuesta = et_respuesta.getText().toString();
+
+        if(!respuesta.equals("")){
+
+            int respuesta_jugador= Integer.parseInt(respuesta);
+            if(resultado == respuesta_jugador){
+
+                mp_great.start();
+                score++;
+                tv_score.setText("Score: " + score);
+                et_respuesta.setText("");
+
+            } else {
+
+                mp_bad.start();
+                vidas--;
+
+                switch (vidas){
+                    case 3:
+                        iv_vidas.setImageResource(R.drawable.tresvidas);
+                        break;
+                    case 2:
+                        Toast.makeText(this, "Te quedan 2 manzanas", Toast.LENGTH_LONG).show();
+                        iv_vidas.setImageResource(R.drawable.dosvidas);
+                        break;
+                    case 1:
+                        Toast.makeText(this, "Te queda 1 manzanas", Toast.LENGTH_LONG).show();
+                        iv_vidas.setImageResource(R.drawable.unavida);
+                        break;
+                    case 0:
+                        Toast.makeText(this, "Has perdido todas tus manzanas", Toast.LENGTH_LONG).show();
+                        Intent intent = new Intent(this, MainActivity.class);
+                        startActivity(intent);
+                        finish();
+                        mp.stop();
+                        mp.release();
+                        break;
+                }
+
+                et_respuesta.setText("");
+
+            }
+
+            NumeroAleatorio();
+
+        } else{
+            Toast.makeText(this, "Escribe tu respuesta", Toast.LENGTH_SHORT).show();
+        }
+    }
+
     public void NumeroAleatorio(){
         if(score <= 9){
 
