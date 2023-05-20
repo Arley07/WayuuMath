@@ -1,12 +1,14 @@
 package com.example.wayuumath;
 
+import android.content.Intent;
 import android.media.MediaPlayer;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 public class Main2Activity_Nivel1 extends AppCompatActivity {
 
@@ -44,5 +46,46 @@ public class Main2Activity_Nivel1 extends AppCompatActivity {
 
         mp_great=MediaPlayer.create(this, R.raw.wonderful);
         mp_bad=MediaPlayer.create(this, R.raw.bad);
+        NumeroAleatorio();
+    }
+    public void NumeroAleatorio(){
+        if(score <= 9){
+
+            numAleatorio_uno = (int) (Math.random() * 10);
+            numAleatorio_dos = (int) (Math.random() * 10);
+
+            resultado = numAleatorio_uno+numAleatorio_dos;
+
+            if(resultado<=10){
+
+                for(int i=0; i < numero.length; i++){
+
+                    int id= getResources().getIdentifier(numero[i], "drawable",getPackageName());
+                        if(numAleatorio_uno == i ){
+                            iv_Auno.setImageResource(id);
+
+                        }if(numAleatorio_dos == i) {
+                            iv_Ados.setImageResource(id);
+                    }
+
+                }
+
+            }else{
+                NumeroAleatorio();
+            }
+
+        }else{
+            Intent intent=new Intent(this, Main2Activity_Nivel2.class);
+            string_score= String.valueOf(score);
+            string_vidas= String.valueOf(vidas);
+            intent.putExtra("jugador", nombre_jugador);
+            intent.putExtra("score", string_score);
+            intent.putExtra("vidas", string_vidas);
+
+            startActivity(intent);
+            finish();
+            mp.stop();
+            mp.release();
+        }
     }
 }

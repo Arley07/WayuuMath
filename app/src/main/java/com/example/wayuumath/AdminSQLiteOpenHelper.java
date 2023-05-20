@@ -2,7 +2,9 @@ package com.example.wayuumath;
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
-import android.support.annotation.Nullable;
+
+
+import org.jetbrains.annotations.Nullable;
 
 public class AdminSQLiteOpenHelper extends SQLiteOpenHelper{
     public AdminSQLiteOpenHelper(@Nullable Context context, @Nullable String name, @Nullable SQLiteDatabase.CursorFactory factory, int version) {
