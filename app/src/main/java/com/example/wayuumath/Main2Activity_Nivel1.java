@@ -100,6 +100,7 @@ public class Main2Activity_Nivel1 extends AppCompatActivity {
             Toast.makeText(this, "Escribe tu respuesta", Toast.LENGTH_SHORT).show();
         }
     }
+
     public void NumeroAleatorio(){
         if(score <= 9){
 
