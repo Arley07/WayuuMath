@@ -21,23 +21,24 @@ public class Main2Activity_Nivel1 extends AppCompatActivity {
     private ImageView iv_Auno, iv_Ados, iv_vidas;
     private EditText et_respuesta;
     private MediaPlayer mp, mp_great, mp_bad;
-    int score, numAleatorio_uno, numAleatorio_dos, resultado, vidas=3;
+    int score, numAleatorio_uno, numAleatorio_dos, resultado, vidas = 3;
     String nombre_jugador, string_score, string_vidas;
 
-    String numero[]={"cero","uno","dos","tres","cuatro","cinco","seis","siete","ocho","nueve"};
+    String numero[] = {"cero", "uno", "dos", "tres", "cuatro", "cinco", "seis", "siete", "ocho", "nueve"};
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main2_nivel1);
 
 
-        Toast.makeText(this, "Nivel 1 - Sumas basicas",Toast.LENGTH_SHORT).show();
-        tv_nombre=(TextView)findViewById(R.id.textView_nombre);
-        tv_score=(TextView)findViewById(R.id.textView_score);
-        iv_vidas=(ImageView)findViewById(R.id.imageView_vidas);
-        iv_Auno=(ImageView)findViewById(R.id.imageView_NumUno);
-        iv_Ados=(ImageView)findViewById(R.id.imageView_NumDos);
-        et_respuesta=(EditText)findViewById(R.id.editText_resultado);
+        Toast.makeText(this, "Nivel 1 - Sumas basicas", Toast.LENGTH_SHORT).show();
+        tv_nombre = (TextView) findViewById(R.id.textView_nombre);
+        tv_score = (TextView) findViewById(R.id.textView_score);
+        iv_vidas = (ImageView) findViewById(R.id.imageView_vidas);
+        iv_Auno = (ImageView) findViewById(R.id.imageView_NumUno);
+        iv_Ados = (ImageView) findViewById(R.id.imageView_NumDos);
+        et_respuesta = (EditText) findViewById(R.id.editText_resultado);
 
         nombre_jugador = getIntent().getStringExtra("jugador");
         tv_nombre.setText("Jugador: " + nombre_jugador);
@@ -49,18 +50,18 @@ public class Main2Activity_Nivel1 extends AppCompatActivity {
         mp.start();
         mp.setLooping(true);
 
-        mp_great=MediaPlayer.create(this, R.raw.wonderful);
-        mp_bad=MediaPlayer.create(this, R.raw.bad);
+        mp_great = MediaPlayer.create(this, R.raw.wonderful);
+        mp_bad = MediaPlayer.create(this, R.raw.bad);
         NumAleatorio();
     }
 
-    public void Comparar(View view){
+    public void Comparar(View view) {
         String respuesta = et_respuesta.getText().toString();
 
-        if(!respuesta.equals("")){
+        if (!respuesta.equals("")) {
 
-            int respuesta_jugador= Integer.parseInt(respuesta);
-            if(resultado == respuesta_jugador){
+            int respuesta_jugador = Integer.parseInt(respuesta);
+            if (resultado == respuesta_jugador) {
 
                 mp_great.start();
                 score++;
@@ -74,7 +75,7 @@ public class Main2Activity_Nivel1 extends AppCompatActivity {
                 vidas--;
                 BaseDeDatos();
 
-                switch (vidas){
+                switch (vidas) {
                     case 3:
                         iv_vidas.setImageResource(R.drawable.tresvidas);
                         break;
@@ -102,41 +103,42 @@ public class Main2Activity_Nivel1 extends AppCompatActivity {
 
             NumAleatorio();
 
-        } else{
+        } else {
             Toast.makeText(this, "Escribe tu respuesta", Toast.LENGTH_SHORT).show();
         }
     }
 
-    public void NumAleatorio(){
-        /*if(score <= 9){
+    public void NumAleatorio() {
+        if (score <= 9) {
 
             numAleatorio_uno = (int) (Math.random() * 10);
             numAleatorio_dos = (int) (Math.random() * 10);
 
-            resultado = numAleatorio_uno+numAleatorio_dos;
+            resultado = numAleatorio_uno + numAleatorio_dos;
 
-            if(resultado<=10){
+            if (resultado <= 10) {
 
-                for(int i=0; i < numero.length; i++){
+                for (int i = 0; i < numero.length; i++) {
 
-                    int id= getResources().getIdentifier(numero[i], "drawable",getPackageName());
-                        if(numAleatorio_uno == i ){
-                            iv_Auno.setImageResource(id);
+                    int id = getResources().getIdentifier(numero[i], "drawable", getPackageName());
+                    if (numAleatorio_uno == i) {
+                        iv_Auno.setImageResource(id);
 
-                        }if(numAleatorio_dos == i) {
-                            iv_Ados.setImageResource(id);
+                    }
+                    if (numAleatorio_dos == i) {
+                        iv_Ados.setImageResource(id);
                     }
 
                 }
 
-            }else{
-                NumeroAleatorio();
+            } else {
+                NumAleatorio();
             }
 
-        }else{
-            Intent intent=new Intent(this, Main2Activity_Nivel2.class);
-            string_score= String.valueOf(score);
-            string_vidas= String.valueOf(vidas);
+        } else {
+            Intent intent = new Intent(this, Main2Activity_Nivel2.class);
+            string_score = String.valueOf(score);
+            string_vidas = String.valueOf(vidas);
             intent.putExtra("jugador", nombre_jugador);
             intent.putExtra("score", string_score);
             intent.putExtra("vidas", string_vidas);
@@ -146,43 +148,7 @@ public class Main2Activity_Nivel1 extends AppCompatActivity {
             mp.stop();
             mp.release();
         }
-    }*/
-    if(score <= 9){
 
-        numAleatorio_uno = (int) (Math.random() * 10);
-        numAleatorio_dos = (int) (Math.random() * 10);
-
-        resultado = numAleatorio_uno + numAleatorio_dos;
-
-        if(resultado <= 10){
-
-            for (int i = 0; i < numero.length; i++){
-                int id = getResources().getIdentifier(numero[i], "drawable", getPackageName());
-                if(numAleatorio_uno == i){
-                    iv_Auno.setImageResource(id);
-                }if(numAleatorio_dos == i){
-                    iv_Ados.setImageResource(id);
-                }
-            }
-
-        } else {
-            NumAleatorio();
-        }
-
-    }else {
-        Intent intent = new Intent(this, Main2Activity_Nivel2.class);
-
-        string_score = String.valueOf(score);
-        string_vidas = String.valueOf(vidas);
-        intent.putExtra("jugador", nombre_jugador);
-        intent.putExtra("score", string_score);
-        intent.putExtra("vidas", string_vidas);
-
-        startActivity(intent);
-        finish();
-        mp.stop();
-        mp.release();
-        }
     }
 
     public void BaseDeDatos(){
@@ -221,39 +187,9 @@ public class Main2Activity_Nivel1 extends AppCompatActivity {
     public void onBackPressed(){
 
     }
-    /*
-    public void BaseDeDatos(){
-        AdminSQLiteOpenHelper admin = new AdminSQLiteOpenHelper(this, "BD", null, 1);
-        SQLiteDatabase BD = admin.getWritableDatabase();
 
-        Cursor consulta = BD.rawQuery("select * from puntaje where score = (select max(score) from puntaje)", null);
-        if(consulta.moveToFirst()){
-            String tem_nombre = consulta.getString(0);
-            String temp_score = consulta.getString(1);
 
-            int bestScore =  Integer.parseInt(temp_score);
 
-            if(score > bestScore){
-                ContentValues modificacion = new ContentValues();
-                modificacion.put("nombre", nombre_jugador);
-                modificacion.put("score", score);
 
-                BD.update("puntaje", modificacion, "score" + bestScore, null);
-            }
-            BD.close();
-        }else {
-            ContentValues insertar = new ContentValues();
-            insertar.put("nombre", nombre_jugador);
-            insertar.put("score", score);
-
-            BD.insert("puntaje", null, insertar);
-            BD.close();
-        }
-    }
-
-    @Override
-    public void onBackPressed(){
-
-    }*/
 
 }
