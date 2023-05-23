@@ -21,6 +21,8 @@ public class MainActivity extends AppCompatActivity {
     private TextView tv_bestScore;
     private MediaPlayer mp;
 
+    private boolean isPlaying = false;
+
     int num_aleatorio = (int) (Math.random() * 10);
 
     @Override
@@ -68,6 +70,24 @@ public class MainActivity extends AppCompatActivity {
         mp = MediaPlayer.create(this, R.raw.alphabet_song);
         mp.start();
         mp.setLooping(true);
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        if(mp.isPlaying()){
+            mp.pause();
+            isPlaying = false;
+        }
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        if (!isPlaying){
+            mp.start();
+            isPlaying = true;
+        }
     }
 
     public void Jugar(View view) {

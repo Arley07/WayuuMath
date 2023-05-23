@@ -26,6 +26,7 @@ public class Main2Activity_Nivel1 extends AppCompatActivity {
 
     String numero[] = {"cero", "uno", "dos", "tres", "cuatro", "cinco", "seis", "siete", "ocho", "nueve"};
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -54,6 +55,7 @@ public class Main2Activity_Nivel1 extends AppCompatActivity {
         mp_bad = MediaPlayer.create(this, R.raw.bad);
         NumAleatorio();
     }
+
 
     public void Comparar(View view) {
         String respuesta = et_respuesta.getText().toString();
