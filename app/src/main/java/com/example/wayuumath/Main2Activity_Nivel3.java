@@ -15,7 +15,7 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 public class Main2Activity_Nivel3 extends AppCompatActivity {
     private TextView tv_nombre, tv_score;
-    private ImageView iv_Auno, iv_Ados, iv_vidas;
+    private ImageView iv_Auno, iv_Ados, iv_vidas, iv_numwa1, iv_numwa2;
     private EditText et_respuesta;
     private MediaPlayer mp, mp_great, mp_bad;
 
@@ -23,7 +23,7 @@ public class Main2Activity_Nivel3 extends AppCompatActivity {
     String nombre_jugador, string_score, string_vidas;
 
     String numero[] = {"cero", "uno", "dos", "tres", "cuatro", "cinco", "seis", "siete", "ocho", "nueve"};
-
+    String number[]= {"zero","one", "two","three","ford","five","six","seven","eight","nine"};
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -35,6 +35,8 @@ public class Main2Activity_Nivel3 extends AppCompatActivity {
         tv_score = (TextView) findViewById(R.id.textView_score);
         iv_vidas = (ImageView) findViewById(R.id.imageView_vidas);
         iv_Auno = (ImageView) findViewById(R.id.imageView_NumUno);
+        iv_numwa1 = (ImageView) findViewById(R.id.imageView_wayuu1);
+        iv_numwa2 = (ImageView) findViewById(R.id.imageView_wayuu2);
         iv_Ados = (ImageView) findViewById(R.id.imageView_NumDos);
         et_respuesta = (EditText) findViewById(R.id.editText_resultado);
 
@@ -137,11 +139,14 @@ public class Main2Activity_Nivel3 extends AppCompatActivity {
                 for (int i = 0; i < numero.length; i++) {
 
                     int id = getResources().getIdentifier(numero[i], "drawable", getPackageName());
+                    int ide = getResources().getIdentifier(number[i],"drawable", getPackageName());
                     if (numAleatorio_uno == i) {
                         iv_Auno.setImageResource(id);
+                        iv_numwa1.setImageResource(ide);
                         }
                     if (numAleatorio_dos == i) {
                         iv_Ados.setImageResource(id);
+                        iv_numwa2.setImageResource(ide);
                         }
                 }
             }else{

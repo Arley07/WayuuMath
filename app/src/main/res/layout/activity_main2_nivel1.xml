@@ -12,9 +12,11 @@
         android:layout_width="126dp"
         android:layout_height="127dp"
         android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginStart="271dp"
-        android:layout_marginBottom="216dp"
+        android:layout_marginStart="278dp"
+        android:layout_marginEnd="7dp"
+        android:layout_marginBottom="349dp"
         app:srcCompat="@drawable/zero" />
 
     <TextView
@@ -101,8 +103,8 @@
         android:layout_height="48dp"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginEnd="125dp"
-        android:layout_marginBottom="191dp"
+        android:layout_marginEnd="131dp"
+        android:layout_marginBottom="255dp"
         android:ems="10"
         android:hint="@string/et_respuesta"
         android:inputType="number" />
@@ -113,8 +115,8 @@
         android:layout_height="48dp"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginEnd="21dp"
-        android:layout_marginBottom="194dp"
+        android:layout_marginEnd="19dp"
+        android:layout_marginBottom="257dp"
         android:background="@drawable/fondoboton"
         android:onClick="Comparar"
         android:text="@string/boton_sumar"
@@ -126,8 +128,8 @@
         android:layout_height="127dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginStart="20dp"
-        android:layout_marginBottom="211dp"
+        android:layout_marginStart="22dp"
+        android:layout_marginBottom="345dp"
         app:srcCompat="@drawable/zero" />
 
 </RelativeLayout>
