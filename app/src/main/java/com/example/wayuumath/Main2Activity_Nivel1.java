@@ -42,7 +42,7 @@ public class Main2Activity_Nivel1 extends AppCompatActivity {
         et_respuesta = (EditText) findViewById(R.id.editText_resultado);
 
         nombre_jugador = getIntent().getStringExtra("jugador");
-        tv_nombre.setText("Jugador: " + nombre_jugador);
+        tv_nombre.setText("Ashaitajai´i: " + nombre_jugador);
 
         getSupportActionBar().setDisplayShowHomeEnabled(true);
         getSupportActionBar().setIcon(R.mipmap.ic_launcher);

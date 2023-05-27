@@ -24,6 +24,8 @@ public class Main2Activity_Nivel6 extends AppCompatActivity {
     int score, numAleatorio_uno, numAleatorio_dos, resultado, vidas = 3;
     String nombre_jugador, string_score, string_vidas;
 
+    private boolean isPlaying = false;
+
     String numero[] = {"cero", "uno", "dos", "tres", "cuatro", "cinco", "seis", "siete", "ocho", "nueve"};
 
     @Override
@@ -70,6 +72,24 @@ public class Main2Activity_Nivel6 extends AppCompatActivity {
         mp_great = MediaPlayer.create(this, R.raw.wonderful);
         mp_bad = MediaPlayer.create(this, R.raw.bad);
         NumAleatorio();
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        if(mp.isPlaying()){
+            mp.pause();
+            isPlaying = false;
+        }
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        if (!isPlaying){
+            mp.start();
+            isPlaying = true;
+        }
     }
 
     public void Comparar(View view) {

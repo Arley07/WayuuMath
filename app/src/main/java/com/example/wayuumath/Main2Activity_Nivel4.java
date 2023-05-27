@@ -71,6 +71,7 @@ public class Main2Activity_Nivel4 extends AppCompatActivity {
         NumAleatorio();
     }
 
+
     public void Comparar(View view) {
         String respuesta = et_respuesta.getText().toString();
 

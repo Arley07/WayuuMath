@@ -1,11 +1,11 @@
 <resources>
     <string name="app_name">WayuuMath</string>
-    <string name="et_nombre">¿Cómo te llamas?</string>
-    <string name="button">Jugar</string>
+    <string name="et_nombre">¿Kasaichi punulia?</string> //Cueal es tu nombre
+    <string name="button">Ashaita</string> //Jugar
 
-    <string name="et_vidas">Intentos:</string>
-    <string name="Jugador_nombre">Jugador:</string>
-    <string name="total_score">Score: 0</string>
-    <string name="boton_sumar">Comprobar</string>
-    <string name="et_respuesta">Respuesta</string>
+    <string name="et_vidas">Jepia:</string> //Intento
+    <string name="Jugador_nombre">Ashaitajaí:</string> //Jugador
+    <string name="total_score">Jerairu: 0</string>  //Score
+    <string name="boton_sumar">Awanaluin</string> //Comprobar
+    <string name="et_respuesta">Juyaajira</string> Respuesta
 </resources>

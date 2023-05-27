@@ -21,7 +21,6 @@ public class Main2Activity_Nivel5 extends AppCompatActivity {
     private MediaPlayer mp, mp_great, mp_bad;
     int score, numAleatorio_uno, numAleatorio_dos, resultado, vidas = 3;
     String nombre_jugador, string_score, string_vidas;
-
     String numero[] = {"cero", "uno", "dos", "tres", "cuatro", "cinco", "seis", "siete", "ocho", "nueve"};
 
     @Override
@@ -68,6 +67,7 @@ public class Main2Activity_Nivel5 extends AppCompatActivity {
         mp_bad = MediaPlayer.create(this, R.raw.bad);
         NumAleatorio();
     }
+
 
     public void Comparar(View view) {
         String respuesta = et_respuesta.getText().toString();
