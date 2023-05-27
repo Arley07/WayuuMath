@@ -21,6 +21,7 @@ public class Main2Activity_Nivel1 extends AppCompatActivity {
     private ImageView iv_Auno, iv_Ados, iv_vidas;
     private EditText et_respuesta;
     private MediaPlayer mp, mp_great, mp_bad;
+
     int score, numAleatorio_uno, numAleatorio_dos, resultado, vidas = 3;
     String nombre_jugador, string_score, string_vidas;
 
@@ -33,7 +34,7 @@ public class Main2Activity_Nivel1 extends AppCompatActivity {
         setContentView(R.layout.activity_main2_nivel1);
 
 
-        Toast.makeText(this, "Nivel 1 - Sumas basicas", Toast.LENGTH_SHORT).show();
+        Toast.makeText(this, "lüli 1 - tsama wüinshi", Toast.LENGTH_SHORT).show();
         tv_nombre = (TextView) findViewById(R.id.textView_nombre);
         tv_score = (TextView) findViewById(R.id.textView_score);
         iv_vidas = (ImageView) findViewById(R.id.imageView_vidas);
@@ -57,6 +58,8 @@ public class Main2Activity_Nivel1 extends AppCompatActivity {
     }
 
 
+
+
     public void Comparar(View view) {
         String respuesta = et_respuesta.getText().toString();
 
@@ -67,7 +70,7 @@ public class Main2Activity_Nivel1 extends AppCompatActivity {
 
                 mp_great.start();
                 score++;
-                tv_score.setText("Score: " + score);
+                tv_score.setText("Jerairu: " + score);
                 et_respuesta.setText("");
                 BaseDeDatos();
 
@@ -82,15 +85,15 @@ public class Main2Activity_Nivel1 extends AppCompatActivity {
                         iv_vidas.setImageResource(R.drawable.tresvidas);
                         break;
                     case 2:
-                        Toast.makeText(this, "Te quedan 2 manzanas", Toast.LENGTH_LONG).show();
+                        Toast.makeText(this, "Jiya'ü 2 jawü", Toast.LENGTH_LONG).show();
                         iv_vidas.setImageResource(R.drawable.dosvidas);
                         break;
                     case 1:
-                        Toast.makeText(this, "Te queda 1 manzanas", Toast.LENGTH_LONG).show();
+                        Toast.makeText(this, "Jiya'ü 1 jawü", Toast.LENGTH_LONG).show();
                         iv_vidas.setImageResource(R.drawable.unavida);
                         break;
                     case 0:
-                        Toast.makeText(this, "Has perdido todas tus manzanas", Toast.LENGTH_LONG).show();
+                        Toast.makeText(this, "Süpü'ü waya mii'ü jawü", Toast.LENGTH_LONG).show();
                         Intent intent = new Intent(this, MainActivity.class);
                         startActivity(intent);
                         finish();

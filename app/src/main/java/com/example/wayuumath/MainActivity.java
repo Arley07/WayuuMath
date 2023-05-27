@@ -62,7 +62,7 @@ public class MainActivity extends AppCompatActivity {
         if(consulta.moveToFirst()){
             String temp_nombre=consulta.getString(0);
             String temp_scrore=consulta.getString(1);
-            tv_bestScore.setText("Record: "+ temp_scrore + " de " + temp_nombre);
+            tv_bestScore.setText("Jerrairuin: "+ temp_scrore + " ü " + temp_nombre);
             BD.close();
         }else{
             BD.close();
@@ -73,7 +73,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     @Override
-    protected void onPause() {
+    public void onPause() {
         super.onPause();
         if(mp.isPlaying()){
             mp.pause();
@@ -82,7 +82,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     @Override
-    protected void onResume() {
+    public void onResume() {
         super.onResume();
         if (!isPlaying){
             mp.start();
